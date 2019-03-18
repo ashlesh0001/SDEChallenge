@@ -15,8 +15,21 @@ class MovingAverageImplementation() extends MovingAverageTrait[Int]{
   //get moving average of Last N elements
   override def movingAverage(window: Int): Int =
   {
-    printf("")
-    return 0
+    try {
+      //Check if window is greater than size of list or window is 0
+      if (window > elementList.size || window == 0) {
+        throw new Exception()
+      }
+      else {
+        //return average of moving window
+        elementList.takeRight(window).sum / window
+      }
+    }
+    catch{
+      //Throw exception and return -1
+      case e: Exception => println("Size of window is greater than size of data structure or window is 0")
+      return -1
+    }
   }
 
   //gets element from location specified
