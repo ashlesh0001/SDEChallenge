@@ -32,11 +32,34 @@ class MovingAverageImplementation() extends MovingAverageTrait[Int]{
     }
   }
 
-  //gets element from location specified
+  //gets element from specified location
   override def getElementAt(location: Int): Int =
   {
-   println("")
-   return 0
+    try
+    {
+      if(elementList.isEmpty) //Check if data structure is empty and throw exception
+      {
+        throw new IndexOutOfBoundsException()
+      }
+      else
+      {
+        return elementList(location) //return element at location
+      }
+    }
+    catch {
+      //return exception and -1
+      case e: IndexOutOfBoundsException => println("Index Out of Bounds: List is empty or try some other index")
+        return -1
+    }
   }
+
+  //Add List of elements to data structure
+  override def addList(elementInsert: List[Int]): Unit =
+  {
+    elementList ++= elementInsert
+  }
+
+  //Get access to all element in data structure
+  override def getAllElement(): List[Int] = elementList.toList
 
 }

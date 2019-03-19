@@ -7,6 +7,10 @@ trait MovingAverageTrait[Any]{
   def addElement(element:Int)
   //Find moving average of N elements
   def movingAverage(movingWindow:Int): Int
+  //Add List of elements to data structure
+  def addList(elementList: List[Int])
+  //Get all elements in data structure
+  def getAllElement() : List[Int]
 }
 
 
