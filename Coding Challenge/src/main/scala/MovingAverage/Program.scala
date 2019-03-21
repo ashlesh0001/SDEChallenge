@@ -6,5 +6,5 @@ object Program extends App {
   test.addElement(2)
   test.addElement(3)
   test.addElement(4)
-  println(test.movingAverage(2))
+  println(test.getMovingAverage(2))
 }

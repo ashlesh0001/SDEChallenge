@@ -4,6 +4,7 @@ import scala.collection.mutable.ListBuffer
 
 class MovingAverageImplementation() extends MovingAverageTrait[Int]{
   //Mutable list to store elements
+
   var elementList = new ListBuffer[Int]()
 
   //add a element to data structure
@@ -13,7 +14,7 @@ class MovingAverageImplementation() extends MovingAverageTrait[Int]{
   }
 
   //get moving average of Last N elements
-  override def movingAverage(window: Int): Int =
+  override def getMovingAverage(window: Int): Int =
   {
     try {
       //Check if window is greater than size of list or window is 0
@@ -21,7 +22,7 @@ class MovingAverageImplementation() extends MovingAverageTrait[Int]{
         throw new Exception()
       }
       else {
-        //return average of moving window
+      //return average of moving window
         elementList.takeRight(window).sum / window
       }
     }
